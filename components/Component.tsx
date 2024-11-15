@@ -29,7 +29,7 @@ export default function Component() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://yourdomain.com" />
+        <link rel="canonical" href="https://www.pixelabs.lat/" />
       </Head>
       <div className="flex flex-col min-h-screen">
         <header className="px-4 lg:px-6 h-20 flex items-center border-b fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900">
