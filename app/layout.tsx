@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Pixel Labs | Denis Jesus Palma Abanto',
-  description: 'Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols. Led by Denis Jesus Palma Abanto, former Lead SRE at Solana.',
+  description: 'Led by Denis Jesus Palma Abanto, Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols.',
   openGraph: {
     title: 'Pixel Labs | Denis Jesus Palma Abanto',
     description: 'Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols.',
