@@ -5,10 +5,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Denis Jesus Palma Abanto | Pixel Labs',
+  title: 'Pixel Labs | Denis Jesus Palma Abanto',
   description: 'Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols. Led by Denis Jesus Palma Abanto, former Lead SRE at Solana.',
   openGraph: {
-    title: 'Denis Jesus Palma Abanto | Pixel Labs',
+    title: 'Pixel Labs | Denis Jesus Palma Abanto',
     description: 'Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols.',
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Denis Jesus Palma Abanto | Pixel Labs',
+    title: 'Pixel Labs | Denis Jesus Palma Abanto',
     description: 'Pixel Labs is a Solana-focused software development firm, building resilient, elegant, and impactful protocols.',
   },
   keywords: [
