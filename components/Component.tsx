@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Component() {
   const homeRef = useRef<HTMLElement>(null)
-  const aboutRef = useRef<HTMLElement>(null)
   const productsRef = useRef<HTMLElement>(null)
   const contactRef = useRef<HTMLElement>(null)
 
@@ -21,8 +21,7 @@ export default function Component() {
 
   useEffect(() => {
     const hash = window.location.hash
-    if (hash === '#about') scrollToSection(aboutRef)
-    else if (hash === '#products') scrollToSection(productsRef)
+    if (hash === '#products') scrollToSection(productsRef)
     else if (hash === '#contact') scrollToSection(contactRef)
   }, [])
 
@@ -50,9 +49,12 @@ export default function Component() {
             <button className="text-base font-medium text-black dark:text-white hover:underline underline-offset-4" onClick={() => scrollToSection(productsRef)}>
               Products
             </button>
-            <button className="text-base font-medium text-black dark:text-white hover:underline underline-offset-4" onClick={() => scrollToSection(aboutRef)}>
+            <Link href="/denis-jesus-palma-abanto" className="text-base font-medium text-black dark:text-white hover:underline underline-offset-4">
               About
-            </button>
+            </Link>
+            <Link href="/blog" className="text-base font-medium text-black dark:text-white hover:underline underline-offset-4">
+              Blog
+            </Link>
             <Button 
               variant="outline" 
               className="ml-4 px-6 text-base bg-white text-black hover:bg-gray-100 border-gray-200" 
@@ -63,6 +65,7 @@ export default function Component() {
           </nav>
         </header>
         <main className="flex-1 pt-20">
+          {/* Hero section - Dark green */}
           <section ref={homeRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32 bg-[#0f1711]">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center gap-4 text-center">
@@ -70,41 +73,25 @@ export default function Component() {
                   Building stronger protocols together
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                  Pixel Labs was founded by Denis Jesus Palma Abanto, bringing years of experience as Solana's Lead SRE to solve the toughest problems in Web3.
+                  Pixel Labs was founded by Denis Jesus Palma Abanto, bringing years of experience as Solana Lead SRE to solve the toughest problems in Web3.
                   Crypto ecosystems rely on robust protocols, and we believe those are best built out in the open, with multiple contributors.
                 </p>
-                <Button className="bg-white text-[#0f1711] hover:bg-gray-100" onClick={() => scrollToSection(contactRef)}>
-                  Contact us
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button className="bg-white text-[#0f1711] hover:bg-gray-100" onClick={() => scrollToSection(contactRef)}>
+                    Contact us
+                  </Button>
+                  <Link href="/denis-jesus-palma-abanto">
+                    <Button variant="outline" className="text-white border-white hover:bg-white/10">
+                      About Denis
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
-
-          <section ref={aboutRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">About Me</h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  My name is Denis Jesus Palma Abanto and I was first SRE at Solana, I built all of Solana's infrastructure from scratch when it was a 10-person team in early 2021. 
-                  Through dedication and expertise, I was promoted twice—to Senior SRE and then to Lead SRE—managing a team of five. 
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <Image
-                  alt="Denis Jesus Palma Abanto - Founder of Pixel Labs and Former Solana Lead SRE"
-                  className="rounded-full aspect-square object-cover border"
-                  height={400}
-                  width={400}
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Denis%20Jesus%20Palma%20Abanto%2020-GDhzXSy4ULVEyMthoHHgISjLuc9ta5.png"
-                  priority
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* Rest of the sections remain the same but with improved alt texts and aria-labels */}
           
-          <section ref={productsRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32 bg-[#0f1711]">
+          {/* Products section - Deep blue color that complements the green */}
+          <section ref={productsRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32 bg-[#101b2b]">
             <div className="container grid items-center gap-6 px-4 md:px-6">
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Our Products</h2>
@@ -113,7 +100,7 @@ export default function Component() {
                 </p>
               </div>
               <div className="grid gap-6 lg:grid-cols-2">
-                <div className="relative group overflow-hidden rounded-lg border p-6 bg-black/40">
+                <div className="relative group overflow-hidden rounded-lg border border-gray-700 p-6 bg-black/40">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold text-white">Token Extensions</h3>
                     <p className="text-gray-300">
@@ -121,7 +108,7 @@ export default function Component() {
                     </p>
                   </div>
                 </div>
-                <div className="relative group overflow-hidden rounded-lg border p-6 bg-black/40">
+                <div className="relative group overflow-hidden rounded-lg border border-gray-700 p-6 bg-black/40">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold text-white">Solana Client Application SDK</h3>
                     <p className="text-gray-300">
@@ -133,14 +120,58 @@ export default function Component() {
             </div>
           </section>
 
-          <section ref={contactRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32">
+          {/* Blog section - Light background for contrast */}
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center gap-4 text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Let's Build Together</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Collaborate with me and our expert engineers to access guidance in building, launching, and maintaining leading Web3 protocols.
+                <h2 className="text-3xl font-bold tracking-tighter text-black sm:text-5xl">Latest from Our Blog</h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Insights and updates from our team on blockchain technology and Web3 trends
                 </p>
-                <Button className="bg-[#0f1711] text-white hover:bg-[#1a2419]">Contact us</Button>
+                <div className="grid gap-6 lg:grid-cols-3 w-full max-w-5xl mt-8">
+                  <div className="rounded-lg border shadow-sm p-6 bg-white">
+                    <time dateTime="2024-03-05" className="text-xs text-gray-500 mb-2 block">March 5, 2024</time>
+                    <h3 className="text-xl font-bold text-black mb-2">Understanding Token Extensions on Solana</h3>
+                    <p className="text-gray-500 mb-4 text-sm">A deep dive into how token extensions are revolutionizing the Solana ecosystem</p>
+                    <Link href="/blog/understanding-token-extensions" className="text-sm font-medium text-[#0f1711] hover:underline">
+                      Read More →
+                    </Link>
+                  </div>
+                  <div className="rounded-lg border shadow-sm p-6 bg-white">
+                    <time dateTime="2024-02-22" className="text-xs text-gray-500 mb-2 block">February 22, 2024</time>
+                    <h3 className="text-xl font-bold text-black mb-2">Building Resilient Infrastructure</h3>
+                    <p className="text-gray-500 mb-4 text-sm">Lessons learned from scaling Solana infrastructure and how to apply them to your projects</p>
+                    <Link href="/blog/resilient-blockchain-infrastructure" className="text-sm font-medium text-[#0f1711] hover:underline">
+                      Read More →
+                    </Link>
+                  </div>
+                  <div className="rounded-lg border shadow-sm p-6 bg-white">
+                    <time dateTime="2024-01-18" className="text-xs text-gray-500 mb-2 block">January 18, 2024</time>
+                    <h3 className="text-xl font-bold text-black mb-2">The Future of Web3 Development</h3>
+                    <p className="text-gray-500 mb-4 text-sm">How emerging patterns and tools are shaping the next generation of decentralized applications</p>
+                    <Link href="/blog/future-of-web3-development" className="text-sm font-medium text-[#0f1711] hover:underline">
+                      Read More →
+                    </Link>
+                  </div>
+                </div>
+                <Link href="/blog" className="mt-8">
+                  <Button variant="outline" className="border-[#0f1711] text-[#0f1711] hover:bg-[#0f1711] hover:text-white">
+                    View All Posts
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact section - Medium green that sits between hero and products sections */}
+          <section ref={contactRef as React.RefObject<HTMLElement>} className="w-full py-12 md:py-24 lg:py-32 bg-[#1a2419]">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center justify-center gap-4 text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Let's Build Together</h2>
+                <p className="max-w-[900px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Collaborate with us and our expert engineers to access guidance in building, launching, and maintaining leading Web3 protocols.
+                </p>
+                <Button className="bg-white text-[#1a2419] hover:bg-gray-100">Contact us</Button>
               </div>
             </div>
           </section>
@@ -154,9 +185,12 @@ export default function Component() {
             <button className="text-xs hover:underline underline-offset-4" onClick={() => scrollToSection(productsRef)}>
               Products
             </button>
-            <button className="text-xs hover:underline underline-offset-4" onClick={() => scrollToSection(aboutRef)}>
+            <Link href="/denis-jesus-palma-abanto" className="text-xs hover:underline underline-offset-4">
               About
-            </button>
+            </Link>
+            <Link href="/blog" className="text-xs hover:underline underline-offset-4">
+              Blog
+            </Link>
             <button className="text-xs hover:underline underline-offset-4" onClick={() => scrollToSection(contactRef)}>
               Contact
             </button>
