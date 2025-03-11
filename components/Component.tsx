@@ -73,7 +73,7 @@ export default function Component() {
                   Building stronger protocols together
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                  Pixel Labs was founded by Denis Jesus Palma Abanto, bringing years of experience as Solana Lead SRE to solve the toughest problems in Web3.
+                  Pixel Labs was founded by Denis Jesus Palma Abanto, bringing years of experience from Solana Labs to solve the toughest problems in Web3.
                   Crypto ecosystems rely on robust protocols, and we believe those are best built out in the open, with multiple contributors.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -82,7 +82,7 @@ export default function Component() {
                   </Button>
                   <Link href="/denis-jesus-palma-abanto">
                     <Button variant="outline" className="text-white border-white hover:bg-white/10">
-                      About Denis
+                      About Me
                     </Button>
                   </Link>
                 </div>
